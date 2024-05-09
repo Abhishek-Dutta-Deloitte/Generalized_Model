@@ -48,7 +48,7 @@ class DataTransformation:
             categorical_onehot_pipeline = Pipeline([
                 
                 ('imputer', SimpleImputer(strategy='most_frequent')),
-                ('onehot', OneHotEncoder(sparse_output=False)),
+                ('onehot', OneHotEncoder(sparse=False)),
                 ('scaler', StandardScaler())
             ])
 
