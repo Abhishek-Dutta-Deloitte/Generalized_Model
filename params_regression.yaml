@@ -1,0 +1,40 @@
+DecisionTree:
+  max_depth: [2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,28,29,20]
+  min_samples_split: [2,3,4,5,6,7,8,9,10]
+  min_samples_leaf: [1,2,3,4,5,6,7,8,9,10]
+
+RandomForest:
+  n_estimators: [50, 100, 150, 200]
+  max_depth: [2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,28,29,20]
+  min_samples_split: [2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,28,29,20]
+  min_samples_leaf: [2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,28,29,20]
+
+SVR:
+  kernel: ["linear", "poly", "rbf", "sigmoid"]
+
+Lasso:
+  alpha: [0.2,0.6,0.8,1.0,1.2,1.4,1.6,1.8,2]
+
+Ridge:
+  alpha: [0.2,0.6,0.8,1.0,1.2,1.4,1.6,1.8,2]
+
+Elasticnet:
+  alpha: [0.2,0.6,0.8,1.0,1.2,1.4,1.6,1.8,2]
+  l1_ratio: [0.1,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1]
+
+BaggingRegressor:
+  n_estimators: [10, 50, 100]
+  max_samples: [0.5, 0.7, 1.0] 
+  max_features: [0.5, 0.7, 1.0]
+  bootstrap: [True, False]
+  bootstrap_features: [True, False]
+
+GradientBoostingRegressor:
+  n_estimators: [100, 200, 300]
+  learning_rate: [0.01, 0.1, 0.2]
+  max_depth: [3, 4, 5]
+  min_samples_split: [2, 3, 4]
+  min_samples_leaf: [1, 2, 3]
+  max_features: [null, 'sqrt', 'log2']
+  subsample: [0.8, 0.9, 1.0]
+

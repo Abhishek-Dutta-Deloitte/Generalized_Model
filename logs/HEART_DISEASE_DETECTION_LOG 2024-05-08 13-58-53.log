@@ -1,0 +1,75 @@
+2024-05-08 13:58:54 - HEART_DISEASE_DETECTION_LOG - data_ingetion - INFO : The current directory for data Ingetion is C:\Users\abhishdutta\Desktop\PRD Projects\IBM WatsonX\Generalized Model Development
+2024-05-08 13:58:54 - HEART_DISEASE_DETECTION_LOG - data_ingetion - INFO : Initiating data ingetion process...
+2024-05-08 13:58:54 - HEART_DISEASE_DETECTION_LOG - data_ingetion - INFO : Raw data saved at C:\Users\abhishdutta\Desktop\PRD Projects\IBM WatsonX\Generalized Model Development\artifacts\raw.csv
+2024-05-08 13:58:54 - HEART_DISEASE_DETECTION_LOG - data_ingetion - INFO : Data ingetion process completed...
+2024-05-08 13:58:54 - HEART_DISEASE_DETECTION_LOG - data_ingetion - INFO : Train data shape: (952, 12)
+2024-05-08 13:58:54 - HEART_DISEASE_DETECTION_LOG - data_ingetion - INFO : Test data shape: (238, 12)
+2024-05-08 13:58:54 - HEART_DISEASE_DETECTION_LOG - data_ingetion - INFO : Train data saved at C:\Users\abhishdutta\Desktop\PRD Projects\IBM WatsonX\Generalized Model Development\artifacts\train.csv
+2024-05-08 13:58:54 - HEART_DISEASE_DETECTION_LOG - data_ingetion - INFO : Test data saved at C:\Users\abhishdutta\Desktop\PRD Projects\IBM WatsonX\Generalized Model Development\artifacts\test.csv
+2024-05-08 13:58:54 - HEART_DISEASE_DETECTION_LOG - data_ingetion - INFO : Data Ingetion process completed...
+2024-05-08 14:03:15 - HEART_DISEASE_DETECTION_LOG - data_ingetion - INFO : Initiating data ingetion process...
+2024-05-08 14:03:15 - HEART_DISEASE_DETECTION_LOG - data_ingetion - INFO : Raw data saved at C:\Users\abhishdutta\Desktop\PRD Projects\IBM WatsonX\Generalized Model Development\artifacts\raw.csv
+2024-05-08 14:03:15 - HEART_DISEASE_DETECTION_LOG - data_ingetion - INFO : Data ingetion process completed...
+2024-05-08 14:03:15 - HEART_DISEASE_DETECTION_LOG - data_ingetion - INFO : Train data shape: (952, 12)
+2024-05-08 14:03:15 - HEART_DISEASE_DETECTION_LOG - data_ingetion - INFO : Test data shape: (238, 12)
+2024-05-08 14:03:15 - HEART_DISEASE_DETECTION_LOG - data_ingetion - INFO : Train data saved at C:\Users\abhishdutta\Desktop\PRD Projects\IBM WatsonX\Generalized Model Development\artifacts\train.csv
+2024-05-08 14:03:15 - HEART_DISEASE_DETECTION_LOG - data_ingetion - INFO : Test data saved at C:\Users\abhishdutta\Desktop\PRD Projects\IBM WatsonX\Generalized Model Development\artifacts\test.csv
+2024-05-08 14:03:15 - HEART_DISEASE_DETECTION_LOG - data_ingetion - INFO : Data Ingetion process completed...
+2024-05-08 14:23:52 - HEART_DISEASE_DETECTION_LOG - data_transformation - INFO : Initiating data transformation process...
+2024-05-08 14:23:52 - HEART_DISEASE_DETECTION_LOG - data_transformation - INFO : Data loaded successfully
+2024-05-08 14:23:52 - HEART_DISEASE_DETECTION_LOG - data_transformation - INFO : Features excluded successfully
+2024-05-08 14:23:52 - HEART_DISEASE_DETECTION_LOG - data_transformation - INFO : Number columns identified successfully
+2024-05-08 14:23:52 - HEART_DISEASE_DETECTION_LOG - data_transformation - INFO : Outliers removed!!!
+2024-05-08 14:23:52 - HEART_DISEASE_DETECTION_LOG - data_transformation - INFO : Outliers removed!!!
+2024-05-08 14:23:52 - HEART_DISEASE_DETECTION_LOG - data_transformation - ERROR : Error occured while initiating the data transformation process: name 'replace_null_with_mean' is not defined
+2024-05-08 14:26:21 - HEART_DISEASE_DETECTION_LOG - data_transformation - INFO : Initiating data transformation process...
+2024-05-08 14:26:21 - HEART_DISEASE_DETECTION_LOG - data_transformation - INFO : Data loaded successfully
+2024-05-08 14:26:21 - HEART_DISEASE_DETECTION_LOG - data_transformation - INFO : Features excluded successfully
+2024-05-08 14:26:21 - HEART_DISEASE_DETECTION_LOG - data_transformation - INFO : Number columns identified successfully
+2024-05-08 14:26:21 - HEART_DISEASE_DETECTION_LOG - data_transformation - INFO : Outliers removed!!!
+2024-05-08 14:26:21 - HEART_DISEASE_DETECTION_LOG - data_transformation - INFO : Outliers removed!!!
+2024-05-08 14:26:21 - HEART_DISEASE_DETECTION_LOG - data_transformation - ERROR : Error occured while initiating the data transformation process: name 'replace_null_with_mean' is not defined
+2024-05-08 14:40:31 - HEART_DISEASE_DETECTION_LOG - data_transformation - INFO : Initiating data transformation process...
+2024-05-08 14:40:31 - HEART_DISEASE_DETECTION_LOG - data_transformation - INFO : Data loaded successfully
+2024-05-08 14:40:31 - HEART_DISEASE_DETECTION_LOG - data_transformation - INFO : Features excluded successfully
+2024-05-08 14:40:31 - HEART_DISEASE_DETECTION_LOG - data_transformation - INFO : Number columns identified successfully
+2024-05-08 14:40:31 - HEART_DISEASE_DETECTION_LOG - data_transformation - INFO : Outliers removed!!!
+2024-05-08 14:40:31 - HEART_DISEASE_DETECTION_LOG - data_transformation - INFO : Outliers removed!!!
+2024-05-08 14:40:31 - HEART_DISEASE_DETECTION_LOG - data_transformation - ERROR : Error occured while initiating the data transformation process: name 'replace_null_with_mean' is not defined
+2024-05-08 15:06:20 - HEART_DISEASE_DETECTION_LOG - data_ingetions - INFO : The current directory for data Ingetion is C:\Users\abhishdutta\Desktop\PRD Projects\IBM WatsonX\Generalized Model Development
+2024-05-08 15:06:20 - HEART_DISEASE_DETECTION_LOG - data_ingetions - INFO : Initiating data ingetion process...
+2024-05-08 15:06:20 - HEART_DISEASE_DETECTION_LOG - data_ingetions - INFO : Raw data saved at C:\Users\abhishdutta\Desktop\PRD Projects\IBM WatsonX\Generalized Model Development\artifacts\raw.csv
+2024-05-08 15:06:20 - HEART_DISEASE_DETECTION_LOG - data_ingetions - INFO : Data ingetion process completed...
+2024-05-08 15:06:20 - HEART_DISEASE_DETECTION_LOG - data_ingetions - INFO : Train data shape: (952, 12)
+2024-05-08 15:06:20 - HEART_DISEASE_DETECTION_LOG - data_ingetions - INFO : Test data shape: (238, 12)
+2024-05-08 15:06:20 - HEART_DISEASE_DETECTION_LOG - data_ingetions - INFO : Train data saved at C:\Users\abhishdutta\Desktop\PRD Projects\IBM WatsonX\Generalized Model Development\artifacts\train.csv
+2024-05-08 15:06:20 - HEART_DISEASE_DETECTION_LOG - data_ingetions - INFO : Test data saved at C:\Users\abhishdutta\Desktop\PRD Projects\IBM WatsonX\Generalized Model Development\artifacts\test.csv
+2024-05-08 15:06:20 - HEART_DISEASE_DETECTION_LOG - data_ingetions - INFO : Data Ingetion process completed...
+2024-05-08 15:06:26 - HEART_DISEASE_DETECTION_LOG - data_transformations - INFO : Initiating data transformation process...
+2024-05-08 15:06:26 - HEART_DISEASE_DETECTION_LOG - data_transformations - INFO : Data loaded successfully
+2024-05-08 15:06:26 - HEART_DISEASE_DETECTION_LOG - data_transformations - INFO : Features excluded successfully
+2024-05-08 15:06:26 - HEART_DISEASE_DETECTION_LOG - data_transformations - INFO : Number columns identified successfully
+2024-05-08 15:06:26 - HEART_DISEASE_DETECTION_LOG - data_transformations - INFO : Outliers removed!!!
+2024-05-08 15:06:26 - HEART_DISEASE_DETECTION_LOG - data_transformations - INFO : Outliers removed!!!
+2024-05-08 15:06:26 - HEART_DISEASE_DETECTION_LOG - data_transformations - ERROR : Error occured while initiating the data transformation process: name 'replace_null_with_mean' is not defined
+2024-05-08 15:07:05 - HEART_DISEASE_DETECTION_LOG - data_transformations - INFO : Initiating data transformation process...
+2024-05-08 15:07:05 - HEART_DISEASE_DETECTION_LOG - data_transformations - INFO : Data loaded successfully
+2024-05-08 15:07:05 - HEART_DISEASE_DETECTION_LOG - data_transformations - INFO : Features excluded successfully
+2024-05-08 15:07:05 - HEART_DISEASE_DETECTION_LOG - data_transformations - INFO : Number columns identified successfully
+2024-05-08 15:07:05 - HEART_DISEASE_DETECTION_LOG - data_transformations - INFO : Outliers removed!!!
+2024-05-08 15:07:05 - HEART_DISEASE_DETECTION_LOG - data_transformations - INFO : Outliers removed!!!
+2024-05-08 15:07:05 - HEART_DISEASE_DETECTION_LOG - data_transformations - ERROR : Error occured while initiating the data transformation process: name 'replace_null_with_mean' is not defined
+2024-05-08 15:09:56 - HEART_DISEASE_DETECTION_LOG - data_transformations - INFO : Initiating data transformation process...
+2024-05-08 15:09:56 - HEART_DISEASE_DETECTION_LOG - data_transformations - INFO : Data loaded successfully
+2024-05-08 15:09:56 - HEART_DISEASE_DETECTION_LOG - data_transformations - INFO : Features excluded successfully
+2024-05-08 15:09:56 - HEART_DISEASE_DETECTION_LOG - data_transformations - INFO : Number columns identified successfully
+2024-05-08 15:09:56 - HEART_DISEASE_DETECTION_LOG - data_transformations - INFO : Outliers removed!!!
+2024-05-08 15:09:56 - HEART_DISEASE_DETECTION_LOG - data_transformations - INFO : Outliers removed!!!
+2024-05-08 15:09:56 - HEART_DISEASE_DETECTION_LOG - data_transformations - ERROR : Error occured while initiating the data transformation process: name 'replace_null_with_mean' is not defined
+2024-05-08 15:10:24 - HEART_DISEASE_DETECTION_LOG - data_transformations - INFO : Initiating data transformation process...
+2024-05-08 15:10:24 - HEART_DISEASE_DETECTION_LOG - data_transformations - INFO : Data loaded successfully
+2024-05-08 15:10:24 - HEART_DISEASE_DETECTION_LOG - data_transformations - INFO : Features excluded successfully
+2024-05-08 15:10:24 - HEART_DISEASE_DETECTION_LOG - data_transformations - INFO : Number columns identified successfully
+2024-05-08 15:10:24 - HEART_DISEASE_DETECTION_LOG - data_transformations - INFO : Outliers removed!!!
+2024-05-08 15:10:24 - HEART_DISEASE_DETECTION_LOG - data_transformations - INFO : Outliers removed!!!
+2024-05-08 15:10:24 - HEART_DISEASE_DETECTION_LOG - data_transformations - ERROR : Error occured while initiating the data transformation process: name 'replace_null_with_mean' is not defined

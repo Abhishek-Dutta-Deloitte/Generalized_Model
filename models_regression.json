@@ -1,0 +1,10 @@
+{
+    "Lasso":"Lasso()",
+    "Ridge":"Ridge()",
+    "Elasticnet":"ElasticNet()",
+    "SVR": "SVR()",
+    "DecisionTree":"DecisionTreeRegressor(random_state=42)",
+    "RandomForest":"RandomForestRegressor(random_state=42)",
+    "GradientBoostingRegressor":"GradientBoostingRegressor(random_state=42)",
+    "BaggingRegressor" : "BaggingRegressor(random_state=42)"
+}

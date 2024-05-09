@@ -1,0 +1,11 @@
+scikit-learn
+flask
+streamlit
+pandas
+numpy
+matplotlib
+seaborn
+ipykernel
+PyMySQL
+pyyaml
+-e .

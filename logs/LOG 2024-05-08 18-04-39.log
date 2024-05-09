@@ -1,0 +1,63 @@
+2024-05-08 18:04:56 - LOG - data_ingetion - INFO : The current directory for data Ingetion is C:\Users\abhishdutta\Desktop\PRD Projects\IBM WatsonX\Generalized Model Development
+2024-05-08 18:04:56 - LOG - data_ingetion - INFO : Initiating data ingetion process...
+2024-05-08 18:04:57 - LOG - data_ingetion - INFO : Raw data saved at C:\Users\abhishdutta\Desktop\PRD Projects\IBM WatsonX\Generalized Model Development\artifacts\raw.csv
+2024-05-08 18:04:57 - LOG - data_ingetion - INFO : Data ingetion process completed...
+2024-05-08 18:04:57 - LOG - data_ingetion - INFO : Train data shape: (36467, 21)
+2024-05-08 18:04:57 - LOG - data_ingetion - INFO : Test data shape: (9117, 21)
+2024-05-08 18:04:57 - LOG - data_ingetion - INFO : Train data saved at C:\Users\abhishdutta\Desktop\PRD Projects\IBM WatsonX\Generalized Model Development\artifacts\train.csv
+2024-05-08 18:04:57 - LOG - data_ingetion - INFO : Test data saved at C:\Users\abhishdutta\Desktop\PRD Projects\IBM WatsonX\Generalized Model Development\artifacts\test.csv
+2024-05-08 18:04:57 - LOG - data_ingetion - INFO : Data Ingetion process completed...
+2024-05-08 18:05:00 - LOG - data_transformation - INFO : Initiating data transformation process...
+2024-05-08 18:05:01 - LOG - data_transformation - INFO : Data loaded successfully
+2024-05-08 18:05:01 - LOG - data_transformation - INFO : Features excluded successfully
+2024-05-08 18:05:01 - LOG - data_transformation - INFO : Number columns identified successfully
+2024-05-08 18:05:01 - LOG - data_transformation - INFO : Outliers removed!!!
+2024-05-08 18:05:01 - LOG - data_transformation - INFO : Outliers removed!!!
+2024-05-08 18:05:01 - LOG - data_transformation - INFO : Replaced Null with mean for input numerical variables
+2024-05-08 18:05:01 - LOG - data_transformation - INFO : Replaced Null with mean for Target Variable
+2024-05-08 18:05:01 - LOG - utils - INFO : ordinal_onehot_numerical_divide done!!!
+2024-05-08 18:05:01 - LOG - data_transformation - INFO : Categorical columns (one hot, ordinal mapping)  and numerical columns divided successfully
+2024-05-08 18:05:01 - LOG - data_transformation - INFO : Empty values filled with mode successfully
+2024-05-08 18:05:01 - LOG - data_transformation - INFO : Empty values filled with mode successfully
+2024-05-08 18:05:01 - LOG - data_transformation - INFO : Categories created successfully!!!
+2024-05-08 18:05:01 - LOG - data_transformation - INFO : Pipeline methods creation ends!!!
+2024-05-08 18:05:01 - LOG - data_transformation - INFO : Input and target feature segregated successfully!!!
+2024-05-08 18:05:01 - LOG - data_transformation - INFO : [[-0.57666859 -0.57474749 -0.57518129 ...  1.7729969  -0.01678305
+   0.71748567]
+ [-0.57666859 -0.57474749  1.73858229 ...  0.41125197 -1.24674815
+   0.71748567]
+ [ 1.73409826 -0.57474749 -0.57518129 ... -1.39883705 -1.24674815
+  -1.39375606]
+ ...
+ [-0.57666859  1.73989452 -0.57518129 ... -1.41072414  1.21318204
+   0.71748567]
+ [-0.57666859 -0.57474749  1.73858229 ... -0.96761346 -1.24674815
+  -1.39375606]
+ [ 1.73409826 -0.57474749 -0.57518129 ... -1.36922066 -1.24674815
+   0.71748567]]
+2024-05-08 18:05:01 - LOG - data_transformation - INFO : Preprocessing done successfully!!!
+2024-05-08 18:05:01 - LOG - data_transformation - INFO : Data transformation done successfully!!!
+2024-05-08 18:05:01 - LOG - data_transformation - INFO : ordinal_columns_mapping.json created successfully!!!
+2024-05-08 18:05:01 - LOG - data_transformation - INFO : The file is saved to: C:\Users\abhishdutta\Desktop\PRD Projects\IBM WatsonX\Generalized Model Development\artifacts\zomato_preprocessor_obj.pkl
+2024-05-08 18:05:01 - LOG - utils - INFO : Object saved successfully
+2024-05-08 18:05:01 - LOG - data_transformation - INFO : Saved the Pickle file preprocessing object
+2024-05-08 18:05:02 - LOG - model_trainer_regression - INFO : Initiating model training process...
+2024-05-08 18:05:02 - LOG - model_trainer_regression - INFO : The models are:
+2024-05-08 18:05:02 - LOG - utils - INFO : Error in evaluate_model: 'LinearRegression'
+2024-05-08 18:05:02 - LOG - model_trainer_regression - INFO : 
+====================================================================================
+
+2024-05-08 18:05:02 - LOG - model_trainer_regression - INFO : Model Report : None
+2024-05-08 18:05:02 - LOG - model_trainer_regression - INFO : 
+====================================================================================
+
+2024-05-08 18:10:58 - LOG - model_trainer_regression - INFO : Initiating model training process...
+2024-05-08 18:10:58 - LOG - model_trainer_regression - INFO : The models are:
+2024-05-08 18:10:58 - LOG - utils - INFO : Error in evaluate_model: 'LinearRegression'
+2024-05-08 18:10:58 - LOG - model_trainer_regression - INFO : 
+====================================================================================
+
+2024-05-08 18:10:58 - LOG - model_trainer_regression - INFO : Model Report : None
+2024-05-08 18:10:58 - LOG - model_trainer_regression - INFO : 
+====================================================================================
+

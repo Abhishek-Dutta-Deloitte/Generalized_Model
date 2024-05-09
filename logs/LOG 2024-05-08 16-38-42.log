@@ -1,0 +1,43 @@
+2024-05-08 16:38:42 - LOG - data_ingetion - INFO : The current directory for data Ingetion is C:\Users\abhishdutta\Desktop\PRD Projects\IBM WatsonX\Generalized Model Development
+2024-05-08 16:38:42 - LOG - data_ingetion - INFO : Initiating data ingetion process...
+2024-05-08 16:38:42 - LOG - data_ingetion - INFO : Raw data saved at C:\Users\abhishdutta\Desktop\PRD Projects\IBM WatsonX\Generalized Model Development\artifacts\raw.csv
+2024-05-08 16:38:42 - LOG - data_ingetion - INFO : Data ingetion process completed...
+2024-05-08 16:38:42 - LOG - data_ingetion - INFO : Train data shape: (952, 12)
+2024-05-08 16:38:42 - LOG - data_ingetion - INFO : Test data shape: (238, 12)
+2024-05-08 16:38:42 - LOG - data_ingetion - INFO : Train data saved at C:\Users\abhishdutta\Desktop\PRD Projects\IBM WatsonX\Generalized Model Development\artifacts\train.csv
+2024-05-08 16:38:42 - LOG - data_ingetion - INFO : Test data saved at C:\Users\abhishdutta\Desktop\PRD Projects\IBM WatsonX\Generalized Model Development\artifacts\test.csv
+2024-05-08 16:38:42 - LOG - data_ingetion - INFO : Data Ingetion process completed...
+2024-05-08 16:38:44 - LOG - data_transformation - INFO : Initiating data transformation process...
+2024-05-08 16:38:44 - LOG - data_transformation - INFO : Data loaded successfully
+2024-05-08 16:38:44 - LOG - data_transformation - INFO : Features excluded successfully
+2024-05-08 16:38:44 - LOG - data_transformation - INFO : Number columns identified successfully
+2024-05-08 16:38:44 - LOG - data_transformation - INFO : Outliers removed!!!
+2024-05-08 16:38:44 - LOG - data_transformation - INFO : Outliers removed!!!
+2024-05-08 16:38:44 - LOG - data_transformation - INFO : Replaced Null with mean for input numerical variables
+2024-05-08 16:38:44 - LOG - data_transformation - INFO : Replaced Null with mean for Target Variable
+2024-05-08 16:38:44 - LOG - utils - INFO : ordinal_onehot_numerical_divide done!!!
+2024-05-08 16:38:44 - LOG - data_transformation - INFO : Categorical columns (one hot, ordinal mapping)  and numerical columns divided successfully
+2024-05-08 16:38:44 - LOG - data_transformation - INFO : Empty values filled with mode successfully
+2024-05-08 16:38:44 - LOG - data_transformation - INFO : Empty values filled with mode successfully
+2024-05-08 16:38:44 - LOG - data_transformation - INFO : Categories created successfully!!!
+2024-05-08 16:38:44 - LOG - data_transformation - INFO : Pipeline methods creation ends!!!
+2024-05-08 16:38:44 - LOG - data_transformation - INFO : Input and target feature segregated successfully!!!
+2024-05-08 16:38:44 - LOG - data_transformation - INFO : [[ 0.43589364 -1.55505042  0.89721875 ...  0.25184008  1.41987421
+   1.31070338]
+ [ 0.43589364  0.64306596 -1.5356244  ... -0.18573788 -0.70428774
+  -0.84848146]
+ [-1.29865961 -1.55505042 -1.5356244  ...  1.2145116  -0.70428774
+   0.74249684]
+ ...
+ [ 0.66716741  0.64306596  0.89721875 ...  1.17075381 -0.70428774
+  -0.84848146]
+ [ 0.32025676  0.64306596 -1.5356244  ...  0.47062906 -0.70428774
+  -0.84848146]
+ [-1.18302273  0.64306596 -1.5356244  ...  0.77693364 -0.70428774
+  -0.84848146]]
+2024-05-08 16:38:44 - LOG - data_transformation - INFO : Preprocessing done successfully!!!
+2024-05-08 16:38:44 - LOG - data_transformation - INFO : Data transformation done successfully!!!
+2024-05-08 16:38:44 - LOG - data_transformation - INFO : ordinal_columns_mapping.json created successfully!!!
+2024-05-08 16:38:44 - LOG - utils - INFO : Object saved successfully
+2024-05-08 16:38:59 - LOG - model_trainer_classification - INFO : ############# C:\Users\abhishdutta\Desktop\PRD Projects\IBM WatsonX\Generalized Model Development
+2024-05-08 16:38:59 - LOG - model_trainer_classification - INFO : Initiating model training process...

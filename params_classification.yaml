@@ -1,0 +1,30 @@
+SVC:
+  C: [0.1, 1, 10, 100]
+  kernel: ["linear", "poly", "rbf", "sigmoid"]
+  degree: [2, 3, 4, 5]
+  gamma: ["scale", "auto"]
+
+DecisionTree:
+  max_depth: [2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,28,29,20]
+  min_samples_split: [2,3,4,5,6,7,8,9,10]
+  min_samples_leaf: [1,2,3,4,5,6,7,8,9,10]
+
+RandomForest:
+  n_estimators: [50, 100, 150, 200]
+  max_depth: [2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,28,29,20]
+  min_samples_split: [2,3,4,5,6,7,8,9,10]
+  min_samples_leaf: [1,2,3,4,5,6,7,8,9,10]
+
+GradientBoostingClassification:
+  n_estimators: [50, 100, 150, 200]
+  learning_rate: [0.01, 0.1, 0.2]
+  max_depth: [2,3,4,5,6,7,8,9,10]
+  min_samples_split: [2,3,4,5,6,7,8,9,10]
+  min_samples_leaf: [1,2,3,4,5,6,7,8,9,10]
+
+BaggingClassification:
+  n_estimators: [10, 50, 100]
+  max_samples: [0.5, 0.7, 1.0]
+  max_features: [0.5, 0.7, 1.0]
+  bootstrap: [True, False]
+  bootstrap_features: [True, False]

@@ -1,0 +1,7 @@
+{
+    "SVC": "SVC()",
+    "DecisionTree":"DecisionTreeClassifier(random_state=42)",
+    "RandomForest":"RandomForestClassifier(random_state=42)",
+    "GradientBoostingClassification":"GradientBoostingClassifier(random_state=42)",
+    "BaggingClassification" : "BaggingClassifier(random_state=42)"
+}

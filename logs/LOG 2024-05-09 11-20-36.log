@@ -1,0 +1,179 @@
+2024-05-09 11:20:37 - LOG - data_ingetion - INFO : The current directory for data Ingetion is C:\Users\abhishdutta\Desktop\PRD Projects\IBM WatsonX\Generalized Model Development
+2024-05-09 11:20:37 - LOG - data_ingetion - INFO : Initiating data ingetion process...
+2024-05-09 11:20:37 - LOG - data_ingetion - INFO : Raw data saved at C:\Users\abhishdutta\Desktop\PRD Projects\IBM WatsonX\Generalized Model Development\artifacts\raw.csv
+2024-05-09 11:20:37 - LOG - data_ingetion - INFO : Data ingetion process completed...
+2024-05-09 11:20:37 - LOG - data_ingetion - INFO : Train data shape: (952, 12)
+2024-05-09 11:20:37 - LOG - data_ingetion - INFO : Test data shape: (238, 12)
+2024-05-09 11:20:37 - LOG - data_ingetion - INFO : Train data saved at C:\Users\abhishdutta\Desktop\PRD Projects\IBM WatsonX\Generalized Model Development\artifacts\train.csv
+2024-05-09 11:20:37 - LOG - data_ingetion - INFO : Test data saved at C:\Users\abhishdutta\Desktop\PRD Projects\IBM WatsonX\Generalized Model Development\artifacts\test.csv
+2024-05-09 11:20:37 - LOG - data_ingetion - INFO : Data Ingetion process completed...
+2024-05-09 11:20:42 - LOG - data_transformation - INFO : Initiating data transformation process...
+2024-05-09 11:20:42 - LOG - data_transformation - INFO : Data loaded successfully
+2024-05-09 11:20:42 - LOG - data_transformation - INFO : Features excluded successfully
+2024-05-09 11:20:42 - LOG - data_transformation - INFO : Number columns identified successfully
+2024-05-09 11:20:42 - LOG - data_transformation - INFO : Outliers removed!!!
+2024-05-09 11:20:42 - LOG - data_transformation - INFO : Outliers removed!!!
+2024-05-09 11:20:43 - LOG - data_transformation - INFO : Replaced Null with mean for input numerical variables
+2024-05-09 11:20:43 - LOG - data_transformation - INFO : Replaced Null with mean for Target Variable
+2024-05-09 11:20:43 - LOG - utils - INFO : ordinal_onehot_numerical_divide done!!!
+2024-05-09 11:20:43 - LOG - data_transformation - INFO : Categorical columns (one hot, ordinal mapping)  and numerical columns divided successfully
+2024-05-09 11:20:43 - LOG - data_transformation - INFO : Empty values filled with mode successfully
+2024-05-09 11:20:43 - LOG - data_transformation - INFO : Empty values filled with mode successfully
+2024-05-09 11:20:43 - LOG - data_transformation - INFO : Categories created successfully!!!
+2024-05-09 11:20:43 - LOG - data_transformation - INFO : Pipeline methods creation ends!!!
+2024-05-09 11:20:43 - LOG - data_transformation - INFO : Input and target feature segregated successfully!!!
+2024-05-09 11:20:43 - LOG - data_transformation - INFO : [[ 0.43589364 -1.55505042  0.89721875 ...  0.25184008  1.41987421
+   1.31070338]
+ [ 0.43589364  0.64306596 -1.5356244  ... -0.18573788 -0.70428774
+  -0.84848146]
+ [-1.29865961 -1.55505042 -1.5356244  ...  1.2145116  -0.70428774
+   0.74249684]
+ ...
+ [ 0.66716741  0.64306596  0.89721875 ...  1.17075381 -0.70428774
+  -0.84848146]
+ [ 0.32025676  0.64306596 -1.5356244  ...  0.47062906 -0.70428774
+  -0.84848146]
+ [-1.18302273  0.64306596 -1.5356244  ...  0.77693364 -0.70428774
+  -0.84848146]]
+2024-05-09 11:20:43 - LOG - data_transformation - INFO : Preprocessing done successfully!!!
+2024-05-09 11:20:43 - LOG - data_transformation - INFO : Data transformation done successfully!!!
+2024-05-09 11:20:43 - LOG - data_transformation - INFO : ordinal_columns_mapping.json created successfully!!!
+2024-05-09 11:20:43 - LOG - data_transformation - INFO : The file is saved to: C:\Users\abhishdutta\Desktop\PRD Projects\IBM WatsonX\Generalized Model Development\artifacts\hear_disease_preprocessor_obj.pkl
+2024-05-09 11:20:43 - LOG - utils - INFO : Object saved successfully
+2024-05-09 11:20:43 - LOG - data_transformation - INFO : Saved the Pickle file preprocessing object
+2024-05-09 11:20:46 - LOG - model_trainer_classification - INFO : Initiating model training process...
+2024-05-09 11:20:46 - LOG - model_trainer_classification - INFO : The models are:
+2024-05-09 11:20:47 - LOG - utils - INFO : 
+====================================================================================
+
+2024-05-09 11:20:47 - LOG - utils - INFO : The confusion matrix and classification report for the model: SVC is:
+2024-05-09 11:20:47 - LOG - utils - INFO :               precision    recall  f1-score   support
+
+         0.0       0.84      0.89      0.86        79
+         1.0       0.87      0.83      0.85        75
+
+    accuracy                           0.86       154
+   macro avg       0.86      0.86      0.86       154
+weighted avg       0.86      0.86      0.86       154
+
+2024-05-09 11:20:47 - LOG - utils - INFO : 
+====================================================================================
+
+2024-05-09 11:20:47 - LOG - utils - INFO : 
+====================================================================================
+
+2024-05-09 11:20:47 - LOG - utils - INFO : The best parameters for the modelSVC are {'kernel': 'poly', 'gamma': 'scale', 'degree': 5, 'C': 10}
+2024-05-09 11:20:47 - LOG - utils - INFO : 
+====================================================================================
+
+2024-05-09 11:20:47 - LOG - utils - INFO : Model: SVC, Accuracy score: 0.8571428571428571
+2024-05-09 11:20:48 - LOG - utils - INFO : 
+====================================================================================
+
+2024-05-09 11:20:48 - LOG - utils - INFO : The confusion matrix and classification report for the model: DecisionTree is:
+2024-05-09 11:20:48 - LOG - utils - INFO :               precision    recall  f1-score   support
+
+         0.0       0.82      0.78      0.80        79
+         1.0       0.78      0.81      0.80        75
+
+    accuracy                           0.80       154
+   macro avg       0.80      0.80      0.80       154
+weighted avg       0.80      0.80      0.80       154
+
+2024-05-09 11:20:48 - LOG - utils - INFO : 
+====================================================================================
+
+2024-05-09 11:20:48 - LOG - utils - INFO : 
+====================================================================================
+
+2024-05-09 11:20:48 - LOG - utils - INFO : The best parameters for the modelDecisionTree are {'min_samples_split': 10, 'min_samples_leaf': 1, 'max_depth': 17}
+2024-05-09 11:20:48 - LOG - utils - INFO : 
+====================================================================================
+
+2024-05-09 11:20:48 - LOG - utils - INFO : Model: DecisionTree, Accuracy score: 0.7987012987012987
+2024-05-09 11:21:10 - LOG - utils - INFO : 
+====================================================================================
+
+2024-05-09 11:21:10 - LOG - utils - INFO : The confusion matrix and classification report for the model: RandomForest is:
+2024-05-09 11:21:11 - LOG - utils - INFO :               precision    recall  f1-score   support
+
+         0.0       0.84      0.87      0.86        79
+         1.0       0.86      0.83      0.84        75
+
+    accuracy                           0.85       154
+   macro avg       0.85      0.85      0.85       154
+weighted avg       0.85      0.85      0.85       154
+
+2024-05-09 11:21:11 - LOG - utils - INFO : 
+====================================================================================
+
+2024-05-09 11:21:11 - LOG - utils - INFO : 
+====================================================================================
+
+2024-05-09 11:21:11 - LOG - utils - INFO : The best parameters for the modelRandomForest are {'n_estimators': 50, 'min_samples_split': 2, 'min_samples_leaf': 1, 'max_depth': 7}
+2024-05-09 11:21:11 - LOG - utils - INFO : 
+====================================================================================
+
+2024-05-09 11:21:11 - LOG - utils - INFO : Model: RandomForest, Accuracy score: 0.8506493506493507
+2024-05-09 11:21:49 - LOG - utils - INFO : 
+====================================================================================
+
+2024-05-09 11:21:49 - LOG - utils - INFO : The confusion matrix and classification report for the model: GradientBoostingClassification is:
+2024-05-09 11:21:49 - LOG - utils - INFO :               precision    recall  f1-score   support
+
+         0.0       0.92      0.91      0.92        79
+         1.0       0.91      0.92      0.91        75
+
+    accuracy                           0.92       154
+   macro avg       0.92      0.92      0.92       154
+weighted avg       0.92      0.92      0.92       154
+
+2024-05-09 11:21:49 - LOG - utils - INFO : 
+====================================================================================
+
+2024-05-09 11:21:49 - LOG - utils - INFO : 
+====================================================================================
+
+2024-05-09 11:21:49 - LOG - utils - INFO : The best parameters for the modelGradientBoostingClassification are {'n_estimators': 100, 'min_samples_split': 10, 'min_samples_leaf': 6, 'max_depth': 6, 'learning_rate': 0.2}
+2024-05-09 11:21:49 - LOG - utils - INFO : 
+====================================================================================
+
+2024-05-09 11:21:49 - LOG - utils - INFO : Model: GradientBoostingClassification, Accuracy score: 0.9155844155844156
+2024-05-09 11:22:05 - LOG - utils - INFO : 
+====================================================================================
+
+2024-05-09 11:22:05 - LOG - utils - INFO : The confusion matrix and classification report for the model: BaggingClassification is:
+2024-05-09 11:22:05 - LOG - utils - INFO :               precision    recall  f1-score   support
+
+         0.0       0.87      0.94      0.90        79
+         1.0       0.93      0.85      0.89        75
+
+    accuracy                           0.90       154
+   macro avg       0.90      0.90      0.90       154
+weighted avg       0.90      0.90      0.90       154
+
+2024-05-09 11:22:05 - LOG - utils - INFO : 
+====================================================================================
+
+2024-05-09 11:22:05 - LOG - utils - INFO : 
+====================================================================================
+
+2024-05-09 11:22:05 - LOG - utils - INFO : The best parameters for the modelBaggingClassification are {'n_estimators': 50, 'max_samples': 1.0, 'max_features': 1.0, 'bootstrap_features': True, 'bootstrap': True}
+2024-05-09 11:22:05 - LOG - utils - INFO : 
+====================================================================================
+
+2024-05-09 11:22:05 - LOG - utils - INFO : Model: BaggingClassification, Accuracy score: 0.8961038961038961
+2024-05-09 11:22:05 - LOG - utils - INFO : Model evaluation complete
+2024-05-09 11:22:05 - LOG - model_trainer_classification - INFO : 
+====================================================================================
+
+2024-05-09 11:22:05 - LOG - model_trainer_classification - INFO : Model Report : {'SVC': {'score': 0.8571428571428571, 'best_params': {'kernel': 'poly', 'gamma': 'scale', 'degree': 5, 'C': 10}}, 'DecisionTree': {'score': 0.7987012987012987, 'best_params': {'min_samples_split': 10, 'min_samples_leaf': 1, 'max_depth': 17}}, 'RandomForest': {'score': 0.8506493506493507, 'best_params': {'n_estimators': 50, 'min_samples_split': 2, 'min_samples_leaf': 1, 'max_depth': 7}}, 'GradientBoostingClassification': {'score': 0.9155844155844156, 'best_params': {'n_estimators': 100, 'min_samples_split': 10, 'min_samples_leaf': 6, 'max_depth': 6, 'learning_rate': 0.2}}, 'BaggingClassification': {'score': 0.8961038961038961, 'best_params': {'n_estimators': 50, 'max_samples': 1.0, 'max_features': 1.0, 'bootstrap_features': True, 'bootstrap': True}}}
+2024-05-09 11:22:05 - LOG - model_trainer_classification - INFO : 
+====================================================================================
+
+2024-05-09 11:22:06 - LOG - model_trainer_classification - INFO : Model Name is:GradientBoostingClassification and the best parameters are:{'n_estimators': 100, 'min_samples_split': 10, 'min_samples_leaf': 6, 'max_depth': 6, 'learning_rate': 0.2}, with score 0.9155844155844156
+2024-05-09 11:22:06 - LOG - utils - INFO : Object saved successfully
+2024-05-09 11:22:06 - LOG - model_trainer_classification - INFO : The model is saved successfully to C:\Users\abhishdutta\Desktop\PRD Projects\IBM WatsonX\Generalized Model Development\artifacts\Heart_Disease_classification_model.pkl
+2024-05-09 11:27:58 - LOG - utils - INFO : Error in load_obj: [Errno 2] No such file or directory: 'C:/Users/abhishdutta/Desktop/PRD Projects/IBM WatsonX/Generalized Model Development/artifacts/model.pkl'
+2024-05-09 11:28:19 - LOG - utils - INFO : Object loaded successfully
+2024-05-09 11:28:40 - LOG - utils - INFO : Object loaded successfully
