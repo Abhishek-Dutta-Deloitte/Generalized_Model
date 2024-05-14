@@ -8,4 +8,5 @@ seaborn
 ipykernel
 PyMySQL
 pyyaml
+aif360
 -e .

@@ -144,13 +144,21 @@ class DataTransformation:
             y_test = df_test[target]
 
             logger.info("Input and target feature segregated successfully!!!")
-        
 
             # #Transformation using preprocessing object:
             X_train_arr = preprocessor_obj.fit_transform(X_train)
             logger.info(X_train_arr)
             X_test_arr = preprocessor_obj.transform(X_test)
             logger.info("Preprocessing done successfully!!!")
+            
+            
+            ###############################
+            """
+                Here We need to Implement the AI360 fairness Matrix algorithm
+            """
+
+        
+            ###############################
 
             train_arr = np.c_[X_train_arr, np.array(y_train)]
             test_arr = np.c_[X_test_arr, np.array(y_test)]

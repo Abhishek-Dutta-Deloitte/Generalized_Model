@@ -14,9 +14,9 @@ def get_requirements(file_path:str)->List[str]:
     return requirements
 
 setup(
-    name='heart_disease_classification',
+    name='Generalized Model',
     version='0.0.1',
-    description='Patient is prone to heart disease or not',
+    description='Classification and Regression Problem',
     author='Abhishek',
     author_email='abhishdutta@deloitte.com',
     license='MIT',
