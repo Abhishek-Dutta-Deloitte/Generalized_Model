@@ -1,0 +1,25 @@
+2024-05-15 13:21:05 - LOG - data_ingetion - INFO : The current directory for data Ingetion is C:\Users\abhishdutta\Desktop\PRD Projects\IBM WatsonX\Generalized Model Development
+2024-05-15 13:21:05 - LOG - data_ingetion - INFO : Initiating data ingetion process...
+2024-05-15 13:21:05 - LOG - data_ingetion - INFO : Raw data saved at C:\Users\abhishdutta\Desktop\PRD Projects\IBM WatsonX\Generalized Model Development\artifacts\raw.csv
+2024-05-15 13:21:05 - LOG - data_ingetion - INFO : Data ingetion process completed...
+2024-05-15 13:21:05 - LOG - data_ingetion - INFO : Train data shape: (2444, 100)
+2024-05-15 13:21:05 - LOG - data_ingetion - INFO : Test data shape: (612, 100)
+2024-05-15 13:21:05 - LOG - data_ingetion - INFO : Train data saved at C:\Users\abhishdutta\Desktop\PRD Projects\IBM WatsonX\Generalized Model Development\artifacts\train.csv
+2024-05-15 13:21:05 - LOG - data_ingetion - INFO : Test data saved at C:\Users\abhishdutta\Desktop\PRD Projects\IBM WatsonX\Generalized Model Development\artifacts\test.csv
+2024-05-15 13:21:05 - LOG - data_ingetion - INFO : Data Ingetion process completed...
+2024-05-15 13:21:06 - LOG - data_transformation - INFO : Initiating data transformation process...
+2024-05-15 13:21:07 - LOG - data_transformation - INFO : Data loaded successfully
+2024-05-15 13:21:07 - LOG - data_transformation - INFO : Features excluded successfully
+2024-05-15 13:21:07 - LOG - data_transformation - INFO : Number columns identified successfully
+2024-05-15 13:21:07 - LOG - data_transformation - INFO : Outliers removed!!!
+2024-05-15 13:21:07 - LOG - data_transformation - INFO : Outliers removed!!!
+2024-05-15 13:21:07 - LOG - data_transformation - INFO : Replaced Null with mean for input numerical variables
+2024-05-15 13:21:07 - LOG - data_transformation - INFO : Replaced Null with mean for Target Variable
+2024-05-15 13:21:07 - LOG - utils - INFO : ordinal_onehot_numerical_divide done!!!
+2024-05-15 13:21:07 - LOG - data_transformation - INFO : Categorical columns (one hot, ordinal mapping)  and numerical columns divided successfully
+2024-05-15 13:21:07 - LOG - data_transformation - INFO : Empty values filled with mode successfully
+2024-05-15 13:21:07 - LOG - data_transformation - INFO : Empty values filled with mode successfully
+2024-05-15 13:21:07 - LOG - data_transformation - INFO : Categories created successfully!!!
+2024-05-15 13:21:07 - LOG - data_transformation - INFO : Pipeline methods creation ends!!!
+2024-05-15 13:21:07 - LOG - data_transformation - INFO : Input and target feature segregated successfully!!!
+2024-05-15 13:21:07 - LOG - data_transformation - ERROR : Error occured while initiating the data transformation process: Found array with 0 sample(s) (shape=(0, 8)) while a minimum of 1 is required by SimpleImputer.

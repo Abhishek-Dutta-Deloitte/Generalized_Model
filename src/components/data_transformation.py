@@ -48,7 +48,7 @@ class DataTransformation:
             categorical_onehot_pipeline = Pipeline([
                 
                 ('imputer', SimpleImputer(strategy='most_frequent')),
-                ('onehot', OneHotEncoder(sparse=False)),
+                ('onehot', OneHotEncoder()),
                 ('scaler', StandardScaler())
             ])
 
@@ -145,6 +145,12 @@ class DataTransformation:
 
             logger.info("Input and target feature segregated successfully!!!")
 
+            
+            # # Check for NaN values
+            # if X_train.isnull().values.any():
+            #     # Handle NaN values
+            #     X_train.fillna(X_train.mean(), inplace=True)
+                
             # #Transformation using preprocessing object:
             X_train_arr = preprocessor_obj.fit_transform(X_train)
             logger.info(X_train_arr)
