@@ -1,205 +1,84 @@
-import os # We use os to create path...
-import sys
+import os
+from sklearn.svm import SVC
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.ensemble import GradientBoostingClassifier
+from sklearn.ensemble import BaggingClassifier
 from src.logger import logger
 from src.exceptions import CustomException
-import pandas as pd
-import numpy as np
-from sklearn.impute import SimpleImputer ## HAndling Missing Values
-from sklearn.preprocessing import StandardScaler # HAndling Feature Scaling
-from sklearn.preprocessing import OrdinalEncoder, OneHotEncoder # Ordinal Encoding for categorical variables
-## pipelines
-from sklearn.pipeline import Pipeline
-from sklearn.compose import ColumnTransformer #Group everything together
-from dataclasses import dataclass
-from src.utils import *
-from src.utils import replace_null_with_mean
 import json
-
-# current_directory =  os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))  
-# print(current_directory)
-# #Define artifacts path
-# artifact_path = os.path.join(current_directory, "artifacts")
-# # print(artifact_path)
-# preprocessor_obj_file_path = os.path.join(artifact_path, "preprocessor_obj.pkl")
-# # print(preprocessor_obj_file_path)
+from dataclasses import dataclass
+import yaml
+from src.utils import *
 
 
 @dataclass
-class DataTransformationConfig:
-    # Get parent Directory path :
+class ModelTrainerConfig:
 
+    # Get parent Directory path :
     current_directory =  os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))  
 
-    #Define artifacts path
+    # Define artifacts path
     artifact_path = os.path.join(current_directory, "artifacts")
 
-class DataTransformation:
+    # #Getting path of params.yaml
+    config_path = os.path.join(current_directory,"models_classification.json")
     
+class InitiateModelTraining:
     def __init__(self) :
-        self.data_transformation_config = DataTransformationConfig()
+        self.model_trainer_config = ModelTrainerConfig()
 
-    def get_data_transformation_object(self, categories, one_hot_cols, ordinal_cols, num_cols, target):
-        
+    def initiate_model_training(self, train_array, test_array, user_model_name = None):
+        """
+        This function is used to initiate the model training process.
+        """
+        logger.info("Initiating model training process...")
         try:
-            # Independent numerical columns
-            num_cols_list = [num for num in num_cols if num != target]  ##It can be automated via taking from UI
+            X_train, y_train, X_test, y_test = (
+                train_array[:,:-1],
+                train_array[:,-1],
+                test_array[:,:-1],
+                test_array[:,-1]
+                )
 
-            # Define pipelines for categorical and numeric data
-            categorical_onehot_pipeline = Pipeline([
-                
-                ('imputer', SimpleImputer(strategy='most_frequent')),
-                ('onehot', OneHotEncoder()),
-                ('scaler', StandardScaler(with_mean=False))
-            ])
+            with open(self.model_trainer_config.config_path, 'r') as f:
+                data_model = json.load(f)
+            
+            models = {key: eval(value) for key, value in data_model.items()}
+            logger.info("The models are:", models)
+         
+            model_report: dict = evaluate_model_classification(X_train, y_train, X_test, y_test, models=models)
 
-            categorical_ordinal_pipeline = Pipeline([
-                ('imputer', SimpleImputer(strategy='most_frequent')),
-                ('ohe', OrdinalEncoder(categories=categories)),
-                ('scaler', StandardScaler(with_mean=False))
-            ])
+            logger.info('\n====================================================================================\n')
+            logger.info(f'Model Report : {model_report}')
+            logger.info('\n====================================================================================\n')
 
-            numerical_pipeline = Pipeline([
-                ('imputer', SimpleImputer(strategy='mean')),
-                ('scaler', StandardScaler())
-            ])
+            # Get the model names and their scores
+            model_scores = {model_name: model_info['score'] for model_name, model_info in model_report.items()}
 
-            # Combine pipelines in a ColumnTransformer
-            preprocessor = ColumnTransformer(transformers=[
-                ('cat_one_hot', categorical_onehot_pipeline, one_hot_cols),
-                ('cat_ordinal', categorical_ordinal_pipeline, ordinal_cols),
-                ('num', numerical_pipeline, num_cols_list)
-            ])
+            # Find the model with the best score
+            best_model_name = max(model_scores, key=model_scores.get)
+            best_model_score = model_scores[best_model_name]
 
-            logger.info("Pipeline methods creation ends!!!")
-            return preprocessor
-        
+            # Get the best parameters for the best model
+            best_model_params = model_report[best_model_name]['best_params']
+            best_model = models[best_model_name]
+            
+            # Create a new instance of the model using the best parameters
+            best_model = models[best_model_name].set_params(**best_model_params)
+
+            # Fit the model with the best parameters
+            best_model.fit(X_train, y_train)
+            
+            logger.info(f"Model Name is:{best_model_name} and the best parameters are:{best_model_params}, with score {best_model_score}")
+            
+            #Define model.pkl path:
+            final_model_name = f"{user_model_name}_classification_model.pkl"
+            trained_model_path = os.path.join(self.model_trainer_config.artifact_path, final_model_name)
+            
+            #Save object:
+            save_objects(trained_model_path, best_model)
+            logger.info("The model is saved successfully to {}".format(trained_model_path))
         except Exception as e:
-            logger.error("Error in get_data_transformation_object")
+            logger.error("Error initiating model training process", e)
             raise CustomException(e)
-            
-    def inititate_data_transformation(self, train_path, test_path, target, features_to_exclude, user_transformation_name=None):
-        try:
-            
-            logger.info("Initiating data transformation process...")
-                
-            df_train = pd.read_csv(train_path)
-            df_test = pd.read_csv(test_path)
-            logger.info("Data loaded successfully")
-            
-            df_train.drop(labels=features_to_exclude, axis=1, inplace=True)
-            df_test.drop(labels=features_to_exclude, axis=1, inplace=True)
-            logger.info("Features excluded successfully")
-            
-            # Number columns:
-            num_cols = [col for col in df_train.columns if df_train[col].dtype!= 'object' and col != target]
-            #Categorical Column:
-            cat_cols = [col for col in df_train.columns if df_train[col].dtype == 'object' and col != target]
-
-            logger.info("Number columns identified successfully")
-        
-#             #Removal of outliers:
-#             df_train = outlier_removal(df_train, num_cols)
-#             logger.info("Outliers removed!!!")
-
-#             # Outlier detection:
-#             df_test = outlier_removal(df_test, num_cols)
-#             logger.info("Outliers removed!!!")
-            
-            #Replacing NA with mean
-            df_train = replace_null_with_mean(df_train, num_cols)
-            df_test = replace_null_with_mean(df_test, num_cols)
-            logger.info("Replaced Null with mean for input numerical variables")
-            logger.info(df_train.shape)
-            logger.info(df_test.shape)
-            
-            ##Replacing NA with mean for Target Variable:
-            df_train = replace_null_with_mean(df_train, [target])
-            df_test = replace_null_with_mean(df_test, [target])            
-            logger.info("Replaced Null with mean for Target Variable")
-            
-            #Fill empty feature with mode
-            df_train = fill_empty_with_mode(df_train,cat_cols)
-            logger.info("Empty values filled with mode successfully")
-
-            df_test = fill_empty_with_mode(df_test,cat_cols)
-            logger.info("Empty values filled with mode successfully")
-            
-            
-            # Calling Feature Classifier for training data:
-            feature_classifier_obj = FeatureClassifier(df_train,target)
-            one_hot_cols, ordinal_cols, num_cols, ordinal_columns_mapping, one_hot_column_mapping = feature_classifier_obj.ordinal_onehot_numerical_divide()
-            logger.info("Categorical columns (one hot, ordinal mapping)  and numerical columns divided successfully")
-
-
-            
-            logger.info(one_hot_cols, ordinal_cols, num_cols, ordinal_columns_mapping, one_hot_column_mapping)
-            # Listing all the categories:
-            categories = []
-            for key, value in ordinal_columns_mapping.items():
-                categories.append(value)
-            logger.info("Categories created successfully!!!")
-            preprocessor_obj = self.get_data_transformation_object(categories, one_hot_cols, ordinal_cols, num_cols, target)
-            
-            # Segregation of input and target feature:
-
-            
-            X_train = df_train.drop(labels=target, axis=1)
-            y_train = df_train[target]
-
-            X_test = df_test.drop(labels=target, axis=1)
-            y_test = df_test[target]
-
-            logger.info("Input and target feature segregated successfully!!!")
-        
-
-            # #Transformation using preprocessing object:
-            X_train_arr = preprocessor_obj.fit_transform(X_train)
-            logger.info(X_train_arr)
-            # Convert the array back into a dataframe
-            X_train_df = pd.DataFrame(X_train_arr, columns=preprocessor_obj.get_feature_names_out())
-
-            logger.info(X_train_df)
-
-            X_test_arr = preprocessor_obj.transform(X_test)
-            # Convert the array back into a dataframe
-            X_test_df = pd.DataFrame(X_test_arr, columns=preprocessor_obj.get_feature_names_out())
-            logger.info("Preprocessing done successfully!!!")
-
-            train_arr = np.c_[X_train_arr, np.array(y_train)]
-            test_arr = np.c_[X_test_arr, np.array(y_test)]
-
-            logger.info("Data transformation done successfully!!!")
-
-            categorical_column_mapping = ordinal_columns_mapping | one_hot_column_mapping
-
-            #Saving ordinal_columns_mapping into ordinal_columns_mapping.json for app.py use:
-            categorical_column_mapping_path = os.path.join(self.data_transformation_config.current_directory, "categorical_column_mapping.json")
-            with open(categorical_column_mapping_path, 'w') as f:
-                json.dump(categorical_column_mapping, f)
-
-            logger.info("ordinal_columns_mapping.json created successfully!!!")
-            
-            
-            final_transformation_obj_name = f"{user_transformation_name}_preprocessor_obj.pkl"
-            preprocessor_obj_file_path = os.path.join(self.data_transformation_config.artifact_path, final_transformation_obj_name)
-            logger.info("The file is saved to: {}".format(preprocessor_obj_file_path))
-            
-            #Saving the Pickle file preprocessing object:
-            save_objects(
-                file_path = preprocessor_obj_file_path,
-                obj = preprocessor_obj
-            )        
-            logger.info("Saved the Pickle file preprocessing object")    
-            return train_arr, test_arr, X_train_df, X_test_df, preprocessor_obj_file_path
-        except Exception as e:
-            logger.error("Error occured while initiating the data transformation process: {}".format(e))
-            raise CustomException(e)
-
-# if __name__ == "__main__":
-
-#     train_data_path = "C:/Users/abhishdutta/Desktop/PRD Projects/IBM WatsonX/Heart Disease Classification/artifacts/train.csv"
-#     test_data_path = "C:/Users/abhishdutta/Desktop/PRD Projects/IBM WatsonX/Heart Disease Classification/artifacts/test.csv"
-
-#     data_transformation_obj = DataTransformation()
-#     train_arr, test_arr, preprocessor_path = data_transformation_obj.inititate_data_transformation(train_data_path, test_data_path)
-    

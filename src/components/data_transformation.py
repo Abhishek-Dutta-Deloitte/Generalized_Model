@@ -112,11 +112,6 @@ class DataTransformation:
             df_test = replace_null_with_mean(df_test, [target])            
             logger.info("Replaced Null with mean for Target Variable")
             
-            # Calling Feature Classifier for training data:
-            feature_classifier_obj = FeatureClassifier(df_train,target)
-            one_hot_cols, ordinal_cols, num_cols, ordinal_columns_mapping, one_hot_column_mapping = feature_classifier_obj.ordinal_onehot_numerical_divide()
-            logger.info("Categorical columns (one hot, ordinal mapping)  and numerical columns divided successfully")
-
             #Fill empty feature with mode
             df_train = fill_empty_with_mode(df_train,one_hot_cols)
             df_train = fill_empty_with_mode(df_train,ordinal_cols)
@@ -125,6 +120,12 @@ class DataTransformation:
             df_test = fill_empty_with_mode(df_test,one_hot_cols)
             df_test = fill_empty_with_mode(df_test,ordinal_cols)
             logger.info("Empty values filled with mode successfully")
+            
+            
+            # Calling Feature Classifier for training data:
+            feature_classifier_obj = FeatureClassifier(df_train,target)
+            one_hot_cols, ordinal_cols, num_cols, ordinal_columns_mapping, one_hot_column_mapping = feature_classifier_obj.ordinal_onehot_numerical_divide()
+            logger.info("Categorical columns (one hot, ordinal mapping)  and numerical columns divided successfully")
             
             logger.info(one_hot_cols, ordinal_cols, num_cols, ordinal_columns_mapping, one_hot_column_mapping)
             # Listing all the categories:
